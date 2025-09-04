@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GitHub Portfolio Design System - Dark-first developer portfolio theme */
+
+@layer base {
+  :root {
+    /* Dark theme as default - popular among developers */
+    --background: 218 23% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 218 23% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 218 23% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 218 23% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 218 23% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 218 23% 12%;
+    --input: 218 23% 12%;
+    --ring: 263 70% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom portfolio variables */
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(199 89% 48%));
+    --gradient-card: linear-gradient(135deg, hsl(218 23% 8%) 0%, hsl(218 23% 10%) 100%);
+    --shadow-glow: 0 0 40px hsl(263 70% 50% / 0.15);
+    --shadow-card: 0 8px 32px hsl(218 23% 3% / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 263 70% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(199 89% 48%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --shadow-glow: 0 0 40px hsl(263 70% 50% / 0.1);
+    --shadow-card: 0 8px 32px hsl(222.2 84% 4.9% / 0.08);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Portfolio specific components */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-muted hover:border-primary;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
